@@ -18,7 +18,3 @@ Endpoints mínimos:
 - GET /api/juegos -> []
 - GET /api/competidores -> []
 - GET /api/torneos -> []
-
-## CORS
-La API debe permitir el origen de GitHub Pages:
-https://TU_USUARIO.github.io

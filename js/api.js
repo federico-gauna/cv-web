@@ -1,4 +1,4 @@
-export const API_BASE_URL = "https://TU-API-DEPLOY.com";
+export const API_BASE_URL = "https://esports-api-production.up.railway.app";
 
 async function request(path){
   const url = `${API_BASE_URL}${path}`;
