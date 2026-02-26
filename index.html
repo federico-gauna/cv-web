@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Mi primera aplicación web profesional</title>
+  <meta name="description" content="Aplicación web personal con proyectos, enfoque técnico y sección dinámica conectada a una API." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Mi primera aplicación web profesional" />
+  <meta property="og:description" content="Proyectos + sección técnica dinámica (API eSports) + cómo trabajo." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#home">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand" aria-label="Marca">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Mi App</span>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="#home" data-nav="home">Home</a>
+        <a class="nav__link" href="#proyectos" data-nav="proyectos">Proyectos</a>
+        <a class="nav__link" href="#tecnica" data-nav="tecnica">Sección Técnica</a>
+        <a class="nav__link" href="#como-trabajo" data-nav="como-trabajo">Cómo trabajo</a>
+      </nav>
+
+      <div class="header__actions">
+        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Cambiar tema">
+          <span id="themeLabel">Tema</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- HOME -->
+    <section id="home" class="section" data-section="home">
+      <div class="container section__inner">
+        <div class="hero">
+          <div class="hero__content">
+            <p class="kicker">Mi primera aplicación web profesional</p>
+            <h1 class="title">Federico Agustín Gauna</h1>
+
+            <div class="hero__grid">
+              <article class="card">
+                <h3 class="card__title">Quién soy</h3>
+                <p class="card__text">
+                    Estudiante de Programación Full Stack (2° año) con fuerte orientación a backend y modelado de datos. Me enfoco en entender los fundamentos (lógica, estructuras, POO, SQL) y aplicarlos en proyectos reales con código versionado y documentación básica.
+                </p>
+              </article>
+
+              <article class="card">
+                <h3 class="card__title">En qué me estoy formando</h3>
+                <p class="card__text">Desarrollo backend con Java y Node.js, diseño de APIs REST, modelado relacional en MySQL y consumo de servicios mediante JavaScript (fetch / async-await).
+                Trabajo con Git/GitHub y despliegue básico de aplicaciones.</p>
+              </article>
+
+              <article class="card">
+                <h3 class="card__title">Mi enfoque</h3>
+                <p class="card__text">Backend / datos / integración
+                Me interesa construir sistemas bien modelados, exponer información mediante APIs y consumirla desde aplicaciones web de forma clara y estructurada.</p>
+              </article>
+            </div>
+
+            <div class="cta">
+              <a class="btn btn--primary" href="https://github.com/federico-gauna?tab=repositories">Ver proyectos</a>
+              <a class="btn btn--ghost" href="#tecnica">Ver sección técnica</a>
+            </div>
+
+            <div class="contact">
+              <a class="chip" href="https://github.com/federico-gauna" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="chip" href="https://www.linkedin.com/in/federico-gauna-963245302/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <button class="chip" id="openContact" type="button">Email</button>
+            </div>
+          </div>
+          <div id="contactModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Contacto</h3>
+                <p id="emailText">federicoa.gauna@gmail.com</p>
+                <div class="modal-actions">
+                    <button id="copyEmail">Copiar</button>
+                    <a
+                    id="openMailClient"
+                    href="mailto:federicoa.gauna@gmail.com?subject=Contacto%20desde%20tu%20portfolio">Abrir Cliente</a>
+                </div>
+                <button class="close-btn" id="closeModal" type="button" ></button>
+            </div>
+          </div>
+          <aside class="hero__aside" aria-label="Panel técnico">
+            <div class="panel">
+              <h2 class="panel__title">Enfoque técnico</h2>
+              <ul class="panel__list">
+                <li>Fundamentos sólidos: lógica, POO, estructuras de datos, SQL.</li>
+                <li>Diseño relacional e integridad referencial.</li>
+                <li>Integración mediante APIs REST (Node/Express).</li>
+                <li>Proyectos académicos con repositorios públicos.</li>
+              </ul>
+
+              <div class="panel__meta">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JS</span>
+                <span class="badge">JAVA</span>
+                <span class="badge">API</span>
+                
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section" data-section="proyectos">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2 class="section__title">Proyectos Destacados</h2>
+          <p class="section__desc">4 proyectos con foco técnico, problemas reales y repositorio.</p>
+        </header>
+
+        <div class="toolbar">
+          <div class="toolbar__left">
+            <label class="label" for="techFilter">Filtrar por tecnología</label>
+            <select id="techFilter" class="select" aria-label="Filtro por tecnología"></select>
+          </div>
+
+          <div class="toolbar__right">
+            <input id="projectSearch" class="input" type="search" placeholder="Buscar por nombre o palabra clave..." />
+          </div>
+        </div>
+
+        <div id="projectsGrid" class="grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN TÉCNICA DINÁMICA -->
+    <section id="tecnica" class="section" data-section="tecnica">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2 class="section__title">Sección técnica dinámica</h2>
+          <p class="section__desc">
+            Esta sección consume datos reales desde mi API desplegada. Permite seleccionar distintas entidades y visualizar la información en tiempo real, simulando un escenario básico de integración frontend–backend.
+          </p>
+        </header>
+
+        <div class="toolbar">
+          <div class="toolbar__left">
+            <label class="label" for="entitySelect">Entidad</label>
+            <select id="entitySelect" class="select" aria-label="Seleccionar entidad">
+              <option value="juegos">Juegos</option>
+              <option value="competidores">Competidores</option>
+              <option value="torneos">Torneos</option>
+            </select>
+          </div>
+
+          <div class="toolbar__right">
+            <button id="reloadEntity" class="btn btn--ghost" type="button">Recargar</button>
+          </div>
+        </div>
+
+        <div class="api-status">
+          <span class="dot" id="apiDot" aria-hidden="true"></span>
+          <span id="apiStatusText">API: sin verificar</span>
+          <span class="muted" id="apiBaseUrlText"></span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" aria-label="Tabla de datos eSports">
+            <thead id="dataHead"></thead>
+            <tbody id="dataBody"></tbody>
+          </table>
+        </div>
+
+        <div id="apiError" class="alert" hidden></div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJO -->
+    <section id="como-trabajo" class="section" data-section="como-trabajo">
+      <div class="container section__inner">
+        <header class="section__header">
+          <h2 class="section__title">Cómo trabajo</h2>
+        </header>
+
+        <div class="work">
+          <article class="card">
+            <h3 class="card__title">Uso Git y ramas</h3>
+            <p class="card__text">Trabajo con Git para versionado y GitHub como repositorio remoto. Utilizo ramas para desarrollo de funcionalidades y mantengo commits descriptivos orientados a cambios concretos.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Documentación básica</h3>
+            <p class="card__text">Cada proyecto incluye README con descripción técnica, tecnologías utilizadas, instrucciones de ejecución y estructura general del sistema.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Enfoque modular</h3>
+            <p class="card__text">Organizo el código separando responsabilidades (modelo, lógica, acceso a datos). Busco que cada componente tenga una función clara y mantenible.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Validación manual de datos</h3>
+            <p class="card__text">Implemento validaciones en capa lógica para evitar inconsistencias antes de persistir información, priorizando integridad y control del flujo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="muted">© <span id="year"></span> Federico Agustín Gauna — App web profesional</span>
+        <span class="muted">Deploy: GitHub Pages</span>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="js/app.js" defer></script>
+</body>
+</html>
