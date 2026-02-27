@@ -24,7 +24,7 @@ export const PROJECTS = [
     short: "Sistema de gestión con roles de usuario, ABM completo, búsquedas, ordenamientos y reportes sin uso de frameworks.",
     problem: "Simula un sistema administrativo aplicando principios de modularidad y control de flujo.",
     implements:["Validaciones manuales de datos.","Lógica de autenticación por rol.","Módulo de reportes.","Ordenamiento personalizado."],
-    repoUrl: "https://github.com/TU_USUARIO/https://github.com/federico-gauna/tp-programacion-todo-servicios"
+    repoUrl: "https://github.com/federico-gauna/tp-programacion-todo-servicios"
   },
   {
     id: "app-web",
